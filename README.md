@@ -1,6 +1,6 @@
 # 🧭 Career Compass — AI-Powered Career Platform
 
-> **Final Year B.Tech CSE Project** | MERN Stack +groq api + Mongoose
+ MERN Stack +groq api + Mongoose
 
 A full-stack AI-powered web application that analyzes resumes, identifies skill gaps, recommends jobs, provides curated learning paths, and tracks your career growth.
 
@@ -26,7 +26,7 @@ A full-stack AI-powered web application that analyzes resumes, identifies skill 
 **Frontend:** React 18, React Router v6, Recharts, React Toastify, Lucide React  
 **Backend:** Node.js, Express.js, Mongoose (MongoDB)  
 **Database:** MongoDB via Mongoose ODM  
-**AI Engine:** Anthropic Claude API (`claude-sonnet-4-20250514`)  
+**AI Engine:**groqe API   
 **Auth:** JWT + bcryptjs  
 **File Parsing:** pdf-parse, mammoth (DOCX)
 
@@ -208,15 +208,3 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 8. **Progress Tracker** — Recharts bar + pie charts, XP display
 9. **Profile Settings** — Editable profile, badges display
 
----
-
-## 👨‍💻 Team Members
-- Vinay Kumar — 2201270100116
-- Chhavi Kumar — 2101270100033
-- Prashant Singh — 2201270100078
-- Sagar Bharti — 2201270100092
-
----
-
-## 📄 License
-MIT — For educational/academic purposes.
