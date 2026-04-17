@@ -83,7 +83,7 @@ career-compass/
 ### Prerequisites
 - Node.js v18+
 - MongoDB (local or Atlas)
-- Anthropic API Key ([get one here](https://console.anthropic.com/))
+- API Key ([get one here](https://console.anthropic.com/))
 
 ---
 
