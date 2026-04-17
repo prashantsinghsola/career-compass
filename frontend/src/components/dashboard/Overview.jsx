@@ -38,35 +38,35 @@ export default function Overview() {
     <div className="animate-fadeIn">
       {/* Header */}
       <div className="page-header">
-        <h1 className="page-title">👋 Welcome back, {user?.name?.split(' ')[0]}!</h1>
+        <h1 className="page-title">Welcome back, {user?.name?.split(' ')[0]}!</h1>
         <p className="page-subtitle">Here's your career progress dashboard</p>
       </div>
 
       {/* Quick Stats */}
       <div className="stats-row">
         <div className="stat-card">
-          <div className="stat-card-icon">⚡</div>
+          <div className="stat-card-icon"><i className="fa-solid fa-coins"></i></div>
           <div>
             <div className="stat-card-val">{user?.points || 0}</div>
             <div className="stat-card-lbl">XP Points</div>
           </div>
         </div>
         <div className="stat-card">
-          <div className="stat-card-icon">📄</div>
+          <div className="stat-card-icon"><i className="fa-solid fa-file-lines"></i></div>
           <div>
             <div className="stat-card-val">{user?.resumeParseCount || 0}</div>
             <div className="stat-card-lbl">Resumes Parsed</div>
           </div>
         </div>
         <div className="stat-card">
-          <div className="stat-card-icon">🎯</div>
+          <div className="stat-card-icon"><i className="fa-solid fa-arrow-trend-up"></i></div>
           <div>
             <div className="stat-card-val">{progressStats?.inProgress || 0}</div>
             <div className="stat-card-lbl">Skills In Progress</div>
           </div>
         </div>
         <div className="stat-card">
-          <div className="stat-card-icon">✅</div>
+          <div className="stat-card-icon"><i className="fa-solid fa-clipboard-check"></i></div>
           <div>
             <div className="stat-card-val">{progressStats?.completed || 0}</div>
             <div className="stat-card-lbl">Skills Completed</div>
@@ -78,7 +78,7 @@ export default function Overview() {
         {/* ATS Score Card */}
         <div className="card">
           <div className="card-header">
-            <span className="card-title">📊 ATS Resume Score</span>
+            <span className="card-title"><i className="fa-solid fa-file-circle-check"></i> ATS Resume Score</span>
             {resume && <span className={`badge badge-${atsScore >= 80 ? 'success' : atsScore >= 60 ? 'warning' : 'danger'}`}>{atsLabel}</span>}
           </div>
           {resume ? (
@@ -97,7 +97,7 @@ export default function Overview() {
             </div>
           ) : (
             <div className="empty-state">
-              <div className="empty-icon">📄</div>
+              <div className="empty-icon"><i className="fa-regular fa-file"></i></div>
               <p>No resume uploaded yet</p>
               <Link to="/dashboard/resume" className="btn btn-primary btn-sm">Upload Resume</Link>
             </div>
@@ -107,7 +107,7 @@ export default function Overview() {
         {/* Skill Gaps */}
         <div className="card">
           <div className="card-header">
-            <span className="card-title">🎯 Top Skill Gaps</span>
+            <span className="card-title"><i className="fa-solid fa-code"></i> Top Skill Gaps</span>
             {resume && <Link to="/dashboard/skills" className="btn btn-outline btn-sm">View All</Link>}
           </div>
           {resume?.analysis?.skillGaps?.length > 0 ? (
@@ -125,7 +125,7 @@ export default function Overview() {
             </div>
           ) : (
             <div className="empty-state">
-              <div className="empty-icon">🎯</div>
+              <div className="empty-icon"><i className="fa-solid fa-magnifying-glass"></i></div>
               <p>Upload your resume to see skill gaps</p>
             </div>
           )}
@@ -134,7 +134,7 @@ export default function Overview() {
         {/* Job Recommendations */}
         <div className="card">
           <div className="card-header">
-            <span className="card-title">💼 Top Job Matches</span>
+            <span className="card-title"><i className="fa-solid fa-briefcase"></i> Top Job Matches</span>
             {resume && <Link to="/dashboard/jobs" className="btn btn-outline btn-sm">View All</Link>}
           </div>
           {resume?.analysis?.jobRecommendations?.length > 0 ? (
@@ -156,7 +156,7 @@ export default function Overview() {
             </div>
           ) : (
             <div className="empty-state">
-              <div className="empty-icon">💼</div>
+              <div className="empty-icon"><i className="fa-solid fa-briefcase"></i></div>
               <p>Upload your resume to get job matches</p>
             </div>
           )}
@@ -165,12 +165,12 @@ export default function Overview() {
         {/* Strengths & Suggestions */}
         <div className="card">
           <div className="card-header">
-            <span className="card-title">💡 AI Suggestions</span>
+            <span className="card-title"><i className="fa-solid fa-lightbulb"></i> AI Suggestions</span>
           </div>
           {resume?.analysis?.suggestions?.length > 0 ? (
             <>
               <div className="suggestions-section">
-                <h4 className="section-mini-title">✅ Strengths</h4>
+                <h4 className="section-mini-title"><i className="fa-solid fa-square-check"></i> Strengths</h4>
                 <ul className="suggestion-list">
                   {resume.analysis.strengths?.slice(0, 3).map((s, i) => (
                     <li key={i} className="suggestion-item strength">{s}</li>
@@ -189,7 +189,7 @@ export default function Overview() {
             </>
           ) : (
             <div className="empty-state">
-              <div className="empty-icon">💡</div>
+              <div className="empty-icon"><i className="fa-regular fa-lightbulb"></i></div>
               <p>Upload your resume to get AI-powered suggestions</p>
             </div>
           )}
@@ -199,7 +199,7 @@ export default function Overview() {
       {/* Badges */}
       {user?.badges?.length > 0 && (
         <div className="card" style={{ marginTop: '1.5rem' }}>
-          <div className="card-header"><span className="card-title">🏆 Your Badges</span></div>
+          <div className="card-header"><span className="card-title"><i className="fa-solid fa-medal"></i> Your Badges</span></div>
           <div className="badges-grid">
             {user.badges.map((b, i) => (
               <div key={i} className="badge-card">

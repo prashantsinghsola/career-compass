@@ -47,7 +47,7 @@ export default function ResumeUpload() {
       setResume(res.data.resume);
       setFile(null);
       fetchHistory();
-      toast.success('Resume analyzed successfully! 🎉');
+      toast.success('Resume analyzed successfully!');
     } catch (err) {
       toast.error(err.response?.data?.message || 'Upload failed. Please try again.');
     } finally {
@@ -60,7 +60,7 @@ export default function ResumeUpload() {
   return (
     <div className="animate-fadeIn">
       <div className="page-header">
-        <h1 className="page-title">📄 Resume Analyzer</h1>
+        <h1 className="page-title">Resume Analyzer</h1>
         <p className="page-subtitle">Upload your resume and get an instant AI-powered analysis</p>
       </div>
 
@@ -81,7 +81,7 @@ export default function ResumeUpload() {
           <input ref={fileRef} type="file" accept=".pdf,.docx,.txt" hidden onChange={e => setFile(e.target.files[0])} />
           {file ? (
             <div className="file-selected">
-              <div className="file-icon">📄</div>
+              <div className="file-icon"><i className="fa-regular fa-file-lines"></i></div>
               <div className="file-name">{file.name}</div>
               <div className="file-size">{(file.size / 1024).toFixed(1)} KB</div>
             </div>
@@ -104,7 +104,7 @@ export default function ResumeUpload() {
             {uploading ? (
               <><span className="btn-spinner"></span> Analyzing with AI...</>
             ) : (
-              '🔍 Analyze Resume'
+              'Analyze Resume'
             )}
           </button>
         </div>
@@ -138,12 +138,12 @@ export default function ResumeUpload() {
             </div>
 
             <div className="card">
-              <div className="card-header"><span className="card-title">📋 Parsed Profile</span></div>
+              <div className="card-header"><span className="card-title">Parsed Profile</span></div>
               <div className="parsed-info">
-                <div className="parsed-row"><span>👤</span><span>{resume.parsedData?.name || '—'}</span></div>
-                <div className="parsed-row"><span>📧</span><span>{resume.parsedData?.email || '—'}</span></div>
-                <div className="parsed-row"><span>📱</span><span>{resume.parsedData?.phone || '—'}</span></div>
-                <div className="parsed-row"><span>📍</span><span>{resume.parsedData?.location || '—'}</span></div>
+                <div className="parsed-row"><span><i className="fa-regular fa-circle-user"></i></span><span>{resume.parsedData?.name || '—'}</span></div>
+                <div className="parsed-row"><span><i className="fa-regular fa-envelope"></i></span><span>{resume.parsedData?.email || '—'}</span></div>
+                <div className="parsed-row"><span><i className="fa-solid fa-mobile-screen-button"></i></span><span>{resume.parsedData?.phone || '—'}</span></div>
+                <div className="parsed-row"><span><i className="fa-solid fa-location-dot"></i></span><span>{resume.parsedData?.location || '—'}</span></div>
               </div>
               <div className="divider"></div>
               <div className="card-title" style={{ marginBottom: '0.75rem' }}>Skills Extracted</div>
@@ -158,7 +158,7 @@ export default function ResumeUpload() {
           {/* Strengths & Weaknesses */}
           <div className="content-grid" style={{ marginBottom: '1.5rem' }}>
             <div className="card">
-              <div className="card-header"><span className="card-title">✅ Strengths</span></div>
+              <div className="card-header"><span className="card-title">Strengths</span></div>
               <ul className="sw-list">
                 {resume.analysis.strengths?.map((s, i) => (
                   <li key={i} className="sw-item strength"><span className="sw-dot">✓</span>{s}</li>
@@ -166,7 +166,7 @@ export default function ResumeUpload() {
               </ul>
             </div>
             <div className="card">
-              <div className="card-header"><span className="card-title">⚠️ Weaknesses</span></div>
+              <div className="card-header"><span className="card-title">Weaknesses</span></div>
               <ul className="sw-list">
                 {resume.analysis.weaknesses?.map((w, i) => (
                   <li key={i} className="sw-item"><span className="sw-dot">!</span>{w}</li>
@@ -178,7 +178,7 @@ export default function ResumeUpload() {
           {/* Education & Experience */}
           {resume.parsedData?.experience?.length > 0 && (
             <div className="card" style={{ marginBottom: '1.5rem' }}>
-              <div className="card-header"><span className="card-title">💼 Experience</span></div>
+              <div className="card-header"><span className="card-title">Experience</span></div>
               <div className="timeline">
                 {resume.parsedData.experience.map((exp, i) => (
                   <div key={i} className="timeline-item">
@@ -199,7 +199,7 @@ export default function ResumeUpload() {
       {/* Upload History */}
       {history.length > 0 && (
         <div className="card">
-          <div className="card-header"><span className="card-title">🕑 Upload History</span></div>
+          <div className="card-header"><span className="card-title">Upload History</span></div>
           <div className="history-list">
             {history.map((h, i) => (
               <div key={i} className="history-item">

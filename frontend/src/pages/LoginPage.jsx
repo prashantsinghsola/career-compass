@@ -17,7 +17,7 @@ export default function LoginPage() {
     setLoading(true);
     try {
       await login(form.email, form.password);
-      toast.success('Welcome back! 🎉');
+      toast.success('Welcome back! ');
       navigate('/dashboard');
     } catch (err) {
       toast.error(err.response?.data?.message || 'Login failed. Check credentials.');
@@ -72,9 +72,9 @@ export default function LoginPage() {
           Don't have an account? <Link to="/register">Create one free</Link>
         </p>
 
-        <div className="auth-demo">
+        {/* <div className="auth-demo">
           <p>Demo credentials: <strong>demo@test.com</strong> / <strong>demo123</strong></p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

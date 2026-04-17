@@ -23,7 +23,7 @@ export default function LearningPaths() {
       await axios.post('/api/progress', { skill });
       const res = await axios.get('/api/progress');
       setProgress(res.data.progress);
-      toast.success(`Started tracking "${skill}" 🎯`);
+      toast.success(`Started tracking "${skill}"`);
     } catch (err) {
       if (err.response?.status === 400) toast.info('Already tracking this skill!');
       else toast.error('Failed to start tracking.');
@@ -47,7 +47,7 @@ export default function LearningPaths() {
     return (
       <div className="animate-fadeIn">
         <div className="page-header">
-          <h1 className="page-title">📚 Learning Paths</h1>
+          <h1 className="page-title">Learning Paths</h1>
           <p className="page-subtitle">Structured paths to master the skills you need</p>
         </div>
         <div className="card" style={{ textAlign: 'center', padding: '4rem 2rem' }}>
@@ -69,12 +69,12 @@ export default function LearningPaths() {
     default: '#6366f1'
   };
 
-  const typeIcons = { course: '🎓', article: '📖', video: '▶️', book: '📚', project: '🛠️' };
+  const typeIcons = { course: <i className="fa-solid fa-book-open"></i>, article: <i className="fa-regular fa-newspaper"></i>, video: <i className="fa-regular fa-circle-play"></i>, book: <i className="fa-solid fa-book"></i>, project: <i className="fa-solid fa-diagram-project"></i> };
 
   return (
     <div className="animate-fadeIn">
       <div className="page-header">
-        <h1 className="page-title">📚 Learning Paths</h1>
+        <h1 className="page-title">Learning Paths</h1>
         <p className="page-subtitle">AI-curated resources to bridge your skill gaps</p>
       </div>
 
@@ -82,7 +82,7 @@ export default function LearningPaths() {
       {progress.length > 0 && (
         <div className="card" style={{ marginBottom: '1.5rem' }}>
           <div className="card-header">
-            <span className="card-title">⚡ Skills You're Tracking</span>
+            <span className="card-title">Skills You're Tracking</span>
             <span className="badge badge-primary">{progress.length} active</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -122,7 +122,7 @@ export default function LearningPaths() {
             <div key={i} className="card">
               <div className="card-header">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                  <div className="path-skill-icon">🎯</div>
+                  <div className="path-skill-icon"><i className="fa-solid fa-code"></i></div>
                   <div>
                     <div style={{ fontWeight: 700, fontSize: '1rem' }}>{path.skill}</div>
                     <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{path.resources?.length} resources</div>

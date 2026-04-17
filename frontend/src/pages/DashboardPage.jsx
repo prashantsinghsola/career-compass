@@ -11,13 +11,13 @@ import ProfileSettings from '../components/dashboard/ProfileSettings';
 import './DashboardPage.css';
 
 const navItems = [
-  { path: '', icon: '🏠', label: 'Overview', end: true },
-  { path: 'resume', icon: '📄', label: 'Resume' },
-  { path: 'skills', icon: '🎯', label: 'Skill Gaps' },
-  { path: 'jobs', icon: '💼', label: 'Jobs' },
-  { path: 'learning', icon: '📚', label: 'Learning' },
-  { path: 'progress', icon: '📈', label: 'Progress' },
-  { path: 'profile', icon: '👤', label: 'Profile' },
+  { path: '', icon: <i className="fa-solid fa-house"></i>, label: 'Overview', end: true },
+  { path: 'resume', icon: <i className="fa-regular fa-file"></i>, label: 'Resume' },
+  { path: 'skills', icon: <i className="fa-solid fa-magnifying-glass"></i>, label: 'Skill Gaps' },
+  { path: 'jobs', icon: <i className="fa-solid fa-briefcase"></i>, label: 'Jobs' },
+  { path: 'learning', icon: <i className="fa-solid fa-graduation-cap"></i>, label: 'Learning' },
+  { path: 'progress', icon: <i className="fa-solid fa-arrow-trend-up"></i>, label: 'Progress' },
+  { path: 'profile', icon: <i className="fa-solid fa-user"></i>, label: 'Profile' },
 ];
 
 export default function DashboardPage() {
@@ -73,7 +73,7 @@ export default function DashboardPage() {
         </nav>
 
         <button className="sidebar-logout" onClick={handleLogout}>
-          <span>🚪</span> Logout
+          <span><i className="fa-solid fa-right-from-bracket"></i></span> Logout
         </button>
       </aside>
 

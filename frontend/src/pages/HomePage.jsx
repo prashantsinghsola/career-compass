@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import './HomePage.css';
 
 const features = [
-  { icon: '🎯', title: 'AI Resume Analysis', desc: 'Upload your resume and get instant ATS score, detailed feedback, and actionable improvements powered by Career Campass.' },
-  { icon: '🔍', title: 'Skill Gap Detection', desc: 'Identify missing skills for your dream role with curated learning resources from top platforms.' },
-  { icon: '💼', title: 'Job Recommendations', desc: 'Get personalized job matches with direct LinkedIn apply links based on your skills and experience.' },
-  { icon: '📈', title: 'Progress Tracking', desc: 'Track your learning journey with visual dashboards, completion metrics, and performance analytics.' },
-  { icon: '🏆', title: 'Gamification & Badges', desc: 'Earn points and badges as you complete skills and apply to jobs. Stay motivated throughout your journey.' },
-  { icon: '🛣️', title: 'Learning Paths', desc: 'Follow structured learning paths with courses, videos, and projects tailored to your career goals.' },
+  { icon: <i className="fa-regular fa-file"></i>, title: 'AI Resume Analysis', desc: 'Upload your resume and get instant ATS score, detailed feedback, and actionable improvements powered by Career Campass.' },
+  { icon: <i className="fa-solid fa-magnifying-glass"></i>, title: 'Skill Gap Detection', desc: 'Identify missing skills for your dream role with curated learning resources from top platforms.' },
+  { icon: <i className="fa-solid fa-briefcase"></i>, title: 'Job Recommendations', desc: 'Get personalized job matches with direct LinkedIn apply links based on your skills and experience.' },
+  { icon: <i className="fa-solid fa-arrow-trend-up"></i>, title: 'Progress Tracking', desc: 'Track your learning journey with visual dashboards, completion metrics, and performance analytics.' },
+  { icon: <i className="fa-solid fa-medal"></i>, title: 'Gamification & Badges', desc: 'Earn points and badges as you complete skills and apply to jobs. Stay motivated throughout your journey.' },
+  { icon: <i className="fa-solid fa-map"></i>, title: 'Learning Paths', desc: 'Follow structured learning paths with courses, videos, and projects tailored to your career goals.' },
 ];
 
 const stats = [
@@ -25,12 +25,13 @@ export default function HomePage() {
       <nav className="home-nav">
         <div className="home-nav-inner">
           <div className="home-logo">
-            <span className="logo-icon"><img 
-      src={process.env.PUBLIC_URL + '/logo.png'} 
-      alt="Career Compass Logo" 
-      style={{ height: '60px', width: 'auto' }} 
-    /></span>
-            <span>Career Compass</span>
+            <span className="logo-icon">
+              <img 
+                    src={process.env.PUBLIC_URL + '/logo.png'} // process.env.PUBLIC_URL it give full address of public folder image use on hosting time
+                    alt="Career Compass Logo" 
+             />
+            </span>
+            {/* <span>Career Compass</span> */}
           </div>
           <div className="home-nav-links">
             <a href="#features">Features</a>
@@ -59,21 +60,21 @@ export default function HomePage() {
         {/* Floating cards */}
         <div className="hero-visual">
           <div className="float-card card-1">
-            <div className="fc-icon">📄</div>
+            <div className="fc-icon"><i className="fa-solid fa-file-circle-check"></i></div>
             <div>
               <div className="fc-label">ATS Score</div>
               <div className="fc-value">87/100</div>
             </div>
           </div>
           <div className="float-card card-2">
-            <div className="fc-icon">⚡</div>
+            <div className="fc-icon"><i className="fa-solid fa-code"></i></div>
             <div>
               <div className="fc-label">Skills Matched</div>
               <div className="fc-value">12 / 15</div>
             </div>
           </div>
           <div className="float-card card-3">
-            <div className="fc-icon">💼</div>
+            <div className="fc-icon"><i className="fa-solid fa-briefcase"></i></div>
             <div>
               <div className="fc-label">Jobs Found</div>
               <div className="fc-value">48 Matches</div>
@@ -121,7 +122,17 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="home-footer">
-        <div className="footer-logo">Career Compass</div>
+        <div className="footer-logo">
+          <div className="home-logo">
+            <span className="logo-icon">
+              <img 
+                    src={process.env.PUBLIC_URL + '/logo.png'} // process.env.PUBLIC_URL it give full address of public folder image use on hosting time
+                    alt="Career Compass Logo" 
+             />
+            </span>
+            {/* <span>Career Compass</span> */}
+          </div></div>
+        
         <p>Build by career compass team & with MERN Stack</p>
        
       {/* Connect with Founders — Footer Section */}

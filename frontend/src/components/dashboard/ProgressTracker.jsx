@@ -66,27 +66,27 @@ export default function ProgressTracker() {
   return (
     <div className="animate-fadeIn">
       <div className="page-header">
-        <h1 className="page-title">📈 Progress Tracker</h1>
+        <h1 className="page-title">Progress Tracker</h1>
         <p className="page-subtitle">Track your learning journey and career readiness</p>
       </div>
 
       {/* XP & Badges */}
       <div className="content-grid" style={{ marginBottom: '1.5rem' }}>
         <div className="card xp-card">
-          <div className="card-header"><span className="card-title">⚡ XP Points</span></div>
+          <div className="card-header"><span className="card-title"><i className="fa-solid fa-coins"></i> XP Points</span></div>
           <div className="xp-display">
             <div className="xp-number">{user?.points || 0}</div>
             <div className="xp-label">Experience Points</div>
           </div>
           <div className="xp-breakdown">
-            <div className="xp-item"><span>📄 Resume Upload</span><span>+50 XP</span></div>
-            <div className="xp-item"><span>✅ Skill Completed</span><span>+100 XP</span></div>
-            <div className="xp-item"><span>🎯 Tracking Started</span><span>+10 XP</span></div>
+            <div className="xp-item"><span>Resume Upload</span><span>+50 XP</span></div>
+            <div className="xp-item"><span>Skill Completed</span><span>+100 XP</span></div>
+            <div className="xp-item"><span>Tracking Started</span><span>+10 XP</span></div>
           </div>
         </div>
 
         <div className="card">
-          <div className="card-header"><span className="card-title">📊 Overview</span></div>
+          <div className="card-header"><span className="card-title">Overview</span></div>
           {stats ? (
             <>
               <div className="stats-row" style={{ marginBottom: '1.25rem' }}>
@@ -115,7 +115,7 @@ export default function ProgressTracker() {
         <div className="content-grid" style={{ marginBottom: '1.5rem' }}>
           {/* Bar Chart */}
           <div className="card">
-            <div className="card-header"><span className="card-title">📊 Skills Completion</span></div>
+            <div className="card-header"><span className="card-title">Skills Completion</span></div>
             <ResponsiveContainer width="100%" height={250}>
               <BarChart data={barData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
@@ -133,7 +133,7 @@ export default function ProgressTracker() {
 
           {/* Pie Chart */}
           <div className="card">
-            <div className="card-header"><span className="card-title">🍩 Status Breakdown</span></div>
+            <div className="card-header"><span className="card-title">Status Breakdown</span></div>
             {pieData.length > 0 ? (
               <ResponsiveContainer width="100%" height={250}>
                 <PieChart>
@@ -156,13 +156,13 @@ export default function ProgressTracker() {
       {/* Detailed List */}
       <div className="card">
         <div className="card-header">
-          <span className="card-title">📋 All Tracked Skills</span>
+          <span className="card-title">All Tracked Skills</span>
           <span className="badge badge-primary">{progress.length}</span>
         </div>
 
         {progress.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📋</div>
+            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}></div>
             <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>No skills tracked yet.</p>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Go to Learning Paths and click "Track Progress" on a skill.</p>
           </div>

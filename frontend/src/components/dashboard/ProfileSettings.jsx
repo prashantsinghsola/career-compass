@@ -21,7 +21,7 @@ export default function ProfileSettings() {
     setSaving(true);
     try {
       await updateProfile(form);
-      toast.success('Profile updated! ✅');
+      toast.success('Profile updated!');
     } catch {
       toast.error('Failed to update profile.');
     } finally {
@@ -32,7 +32,7 @@ export default function ProfileSettings() {
   return (
     <div className="animate-fadeIn">
       <div className="page-header">
-        <h1 className="page-title">👤 Profile Settings</h1>
+        <h1 className="page-title"><i className="fa-solid fa-circle-user"></i>  Profile Settings</h1>
         <p className="page-subtitle">Manage your account and career preferences</p>
       </div>
 
@@ -70,7 +70,7 @@ export default function ProfileSettings() {
           {/* Badges */}
           {user?.badges?.length > 0 && (
             <div className="card">
-              <div className="card-header"><span className="card-title">🏆 Earned Badges</span></div>
+              <div className="card-header"><span className="card-title"><i className="fa-solid fa-medal"></i> Earned Badges</span></div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
                 {user.badges.map((b, i) => (
                   <div key={i} className="badge-display">
@@ -85,7 +85,7 @@ export default function ProfileSettings() {
 
         {/* Edit Form */}
         <div className="card">
-          <div className="card-header"><span className="card-title">✏️ Edit Profile</span></div>
+          <div className="card-header"><span className="card-title"><i className="fa-solid fa-pen-to-square"></i> Edit Profile</span></div>
           <form onSubmit={handleSave}>
             <div className="form-group">
               <label className="form-label">Full Name</label>
@@ -129,7 +129,7 @@ export default function ProfileSettings() {
             </div>
 
             <button type="submit" className="btn btn-primary" disabled={saving} style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem' }}>
-              {saving ? <><span className="btn-spinner"></span> Saving...</> : '💾 Save Changes'}
+              {saving ? <><span className="btn-spinner"></span> Saving...</> : 'Save Changes'}
             </button>
           </form>
         </div>

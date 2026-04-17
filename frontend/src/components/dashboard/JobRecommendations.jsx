@@ -21,11 +21,11 @@ export default function JobRecommendations() {
     return (
       <div className="animate-fadeIn">
         <div className="page-header">
-          <h1 className="page-title">💼 Job Recommendations</h1>
+          <h1 className="page-title"><i className="fa-solid fa-briefcase"></i> Job Recommendations</h1>
           <p className="page-subtitle">AI-matched jobs based on your resume</p>
         </div>
         <div className="card" style={{ textAlign: 'center', padding: '4rem 2rem' }}>
-          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>💼</div>
+          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}><i className="fa-solid fa-briefcase"></i></div>
           <h3 style={{ marginBottom: '0.5rem' }}>No Recommendations Yet</h3>
           <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>Upload your resume to get personalized job recommendations.</p>
           <Link to="/dashboard/resume" className="btn btn-primary">Upload Resume →</Link>
@@ -49,7 +49,7 @@ export default function JobRecommendations() {
   return (
     <div className="animate-fadeIn">
       <div className="page-header">
-        <h1 className="page-title">💼 Job Recommendations</h1>
+        <h1 className="page-title"><i className="fa-solid fa-briefcase"></i> Job Recommendations</h1>
         <p className="page-subtitle">{allJobs.length} jobs matched based on your resume — apply directly via LinkedIn</p>
       </div>
 
@@ -58,7 +58,7 @@ export default function JobRecommendations() {
         <input
           type="text"
           className="form-input"
-          placeholder="🔍 Search by title or company..."
+          placeholder="Search by title or company..."
           value={search}
           onChange={e => setSearch(e.target.value)}
           style={{ maxWidth: '300px' }}
@@ -79,19 +79,19 @@ export default function JobRecommendations() {
       {/* Stats */}
       <div className="stats-row" style={{ marginBottom: '1.5rem' }}>
         <div className="stat-card">
-          <div className="stat-card-icon">💼</div>
-          <div><div className="stat-card-val">{allJobs.length}</div><div className="stat-card-lbl">Total Matches</div></div>
+          <div className="stat-card-icon"><i className="fa-solid fa-briefcase"></i></div>
+          <div><div className="stat-card-val">{allJobs.length}</div><div className="stat-card-lbl">Total Matches Jobs</div></div>
         </div>
         <div className="stat-card">
-          <div className="stat-card-icon">🎯</div>
-          <div><div className="stat-card-val">{allJobs.filter(j => j.matchScore >= 85).length}</div><div className="stat-card-lbl">High Match (85%+)</div></div>
+          <div className="stat-card-icon"><i className="fa-solid fa-stairs"></i></div>
+          <div><div className="stat-card-val">{allJobs.filter(j => j.matchScore >= 85).length}</div><div className="stat-card-lbl">High Match Job (85%+)</div></div>
         </div>
         <div className="stat-card">
-          <div className="stat-card-icon">🎓</div>
+          <div className="stat-card-icon"><i className="fa-solid fa-graduation-cap"></i></div>
           <div><div className="stat-card-val">{allJobs.filter(j => j.type === 'internship').length}</div><div className="stat-card-lbl">Internships</div></div>
         </div>
         <div className="stat-card">
-          <div className="stat-card-icon">💰</div>
+          <div className="stat-card-icon"><i className="fa-solid fa-business-time"></i></div>
           <div><div className="stat-card-val">{allJobs.filter(j => j.type === 'full-time').length}</div><div className="stat-card-lbl">Full-Time Roles</div></div>
         </div>
       </div>
@@ -121,8 +121,8 @@ export default function JobRecommendations() {
               </div>
 
               <div className="job-meta">
-                <span>📍 {job.location}</span>
-                <span>💰 {job.salary}</span>
+                <span><i className="fa-solid fa-location-dot"></i> {job.location}</span>
+                <span><i className="fa-solid fa-hand-holding-dollar"></i> {job.salary}</span>
               </div>
               <span className={`badge badge-${job.type === 'internship' ? 'info' : 'primary'}`} style={{ marginBottom: '0.75rem', display: 'inline-flex' }}>
                 {typeLabel[job.type] || job.type}

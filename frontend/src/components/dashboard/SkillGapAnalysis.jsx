@@ -27,11 +27,11 @@ export default function SkillGapAnalysis() {
     return (
       <div className="animate-fadeIn">
         <div className="page-header">
-          <h1 className="page-title">🎯 Skill Gap Analysis</h1>
+          <h1 className="page-title">Skill Gap Analysis</h1>
           <p className="page-subtitle">Discover skills you need to land your dream job</p>
         </div>
         <div className="card" style={{ textAlign: 'center', padding: '4rem 2rem' }}>
-          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎯</div>
+          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}></div>
           <h3 style={{ marginBottom: '0.5rem' }}>No Analysis Available</h3>
           <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>Upload and analyze your resume first to see skill gaps.</p>
           <Link to="/dashboard/resume" className="btn btn-primary">Upload Resume →</Link>
@@ -49,7 +49,7 @@ export default function SkillGapAnalysis() {
   return (
     <div className="animate-fadeIn">
       <div className="page-header">
-        <h1 className="page-title">🎯 Skill Gap Analysis</h1>
+        <h1 className="page-title">Skill Gap Analysis</h1>
         <p className="page-subtitle">AI-identified gaps and curated resources to bridge them</p>
       </div>
 
@@ -88,7 +88,7 @@ export default function SkillGapAnalysis() {
       {/* Current Skills */}
       <div className="card" style={{ marginBottom: '1.5rem' }}>
         <div className="card-header">
-          <span className="card-title">✅ Your Current Skills</span>
+          <span className="card-title">Your Current Skills</span>
           <span className="badge badge-success">{existingSkills.length} skills</span>
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
@@ -101,7 +101,7 @@ export default function SkillGapAnalysis() {
       {/* Skill Gaps */}
       {gaps.length === 0 ? (
         <div className="card" style={{ textAlign: 'center', padding: '3rem' }}>
-          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎉</div>
+          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}></div>
           <h3>Great Resume!</h3>
           <p style={{ color: 'var(--text-muted)' }}>No significant skill gaps detected.</p>
         </div>
