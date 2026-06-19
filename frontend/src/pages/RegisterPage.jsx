@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useAuth } from '../context/AuthContext';
 import './AuthPages.css';
+import bgImage from '../assets/lbg.jpg';
 
 export default function RegisterPage() {
   const { register } = useAuth();
@@ -33,12 +34,27 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="auth-page">
+    <div className="auth-page" style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
       <div className="auth-orb orb-1"></div>
       <div className="auth-orb orb-2"></div>
 
       <div className="auth-container auth-register">
-        <Link to="/" className="auth-logo">Career Compass</Link>
+        <Link to="/" className="auth-logo">
+          <img 
+            src={process.env.PUBLIC_URL + '/logo.png'} // process.env.PUBLIC_URL it give full address of public folder image use on hosting time
+             alt="Career Compass Logo"  
+             style={{
+                  width: '150px',
+                  height: 'auto',
+                  display: 'block',
+                  margin: '0 auto',
+                }}
+           />
+        </Link>
         <h1 className="auth-title">Create Account</h1>
         <p className="auth-subtitle">Start your AI-powered career journey today</p>
 
@@ -94,6 +110,9 @@ export default function RegisterPage() {
         <p className="auth-switch">
           Already have an account? <Link to="/login">Sign in</Link>
         </p>
+         <Link to="/" className="btn btn-primary btn-sm" style={{ marginTop: '1rem', display: 'inline-flex'}}>
+                  ← Back to Home
+                </Link>
       </div>
     </div>
   );

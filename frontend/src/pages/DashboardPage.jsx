@@ -9,6 +9,7 @@ import LearningPaths from '../components/dashboard/LearningPaths';
 import ProgressTracker from '../components/dashboard/ProgressTracker';
 import ProfileSettings from '../components/dashboard/ProfileSettings';
 import './DashboardPage.css';
+// import { RiLogoutBoxLine, RiHomeLine, RiFileTextLine, RiSearchLine, RiBriefcaseLine, RiGraduationCapLine, RiLineChartLine, RiUserLine } from 'react-icons/ri';
 
 const navItems = [
   { path: '', icon: <i className="fa-solid fa-house"></i>, label: 'Overview', end: true },
@@ -19,6 +20,18 @@ const navItems = [
   { path: 'progress', icon: <i className="fa-solid fa-arrow-trend-up"></i>, label: 'Progress' },
   { path: 'profile', icon: <i className="fa-solid fa-user"></i>, label: 'Profile' },
 ];
+
+
+// for animated icons
+// const navItems = [
+//   { path: '', icon: <RiHomeLine size={18}/>, label: 'Overview', end: true },
+//   { path: 'resume', icon: <RiFileTextLine size={18}/>, label: 'Resume' },
+//   { path: 'skills', icon: <RiSearchLine size={18}/>, label: 'Skill Gaps' },
+//   { path: 'jobs', icon: <RiBriefcaseLine size={18}/>, label: 'Jobs' },
+//   { path: 'learning', icon: <RiGraduationCapLine size={18}/>, label: 'Learning' },
+//   { path: 'progress', icon: <RiLineChartLine size={18}/>, label: 'Progress' },
+//   { path: 'profile', icon: <RiUserLine size={18}/>, label: 'Profile' },
+// ];
 
 export default function DashboardPage() {
   const { user, logout } = useAuth();
@@ -35,7 +48,17 @@ export default function DashboardPage() {
       {/* Sidebar */}
       <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
-          <div className="sidebar-logo"> <span>Career Compass</span></div>
+
+                <div className="home-logo">
+                  <span className="logo-icon">
+                    <img 
+                          src={process.env.PUBLIC_URL + '/logo.png'} // process.env.PUBLIC_URL it give full address of public folder image use on hosting time
+                          alt="Career Compass Logo" 
+                  />
+                  </span>
+                  {/* <span>Career Compass</span> */}
+                </div>
+                
           <button className="sidebar-close" onClick={() => setSidebarOpen(false)}>✕</button>
         </div>
 
@@ -75,6 +98,15 @@ export default function DashboardPage() {
         <button className="sidebar-logout" onClick={handleLogout}>
           <span><i className="fa-solid fa-right-from-bracket"></i></span> Logout
         </button>
+
+       {/* for animated icons */}
+
+
+            {/* <button className="sidebar-logout" onClick={handleLogout}>
+                              <RiLogoutBoxLine size={16}/> Logout
+            </button>  */}
+
+
       </aside>
 
       {/* Overlay */}

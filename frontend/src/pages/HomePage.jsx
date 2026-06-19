@@ -24,6 +24,7 @@ export default function HomePage() {
       {/* Navbar */}
       <nav className="home-nav">
         <div className="home-nav-inner">
+          <a href="#" className="home-logo" >
           <div className="home-logo">
             <span className="logo-icon">
               <img 
@@ -33,6 +34,7 @@ export default function HomePage() {
             </span>
             {/* <span>Career Compass</span> */}
           </div>
+          </a>
           <div className="home-nav-links">
             <a href="#features">Features</a>
             <a href="#stats">Why US</a>
@@ -80,8 +82,8 @@ export default function HomePage() {
               <div className="fc-value">48 Matches</div>
             </div>
           </div>
-          <div className="hero-orb orb-1"></div>
-          <div className="hero-orb orb-2"></div>
+          {/* <div className="hero-orb orb-1"></div>
+          <div className="hero-orb orb-2"></div> */}
         </div>
       </section>
 

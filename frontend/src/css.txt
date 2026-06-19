@@ -70,19 +70,6 @@ h1, h2, h3, h4, h5 {
 ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
 /* === BUTTONS === */
-
-.btn-primary:hover {
-  background:  rgb(218, 216, 215)  !important;
-  color:black !important;
-  border-color: black !important;
-}
-
-
-.btn-outline:hover {
-  background: rgb(218, 216, 215) !important;
-  color:black !important;
-  border-color: black !important;
-}
 .btn {
   display: inline-flex;
   align-items: center;
